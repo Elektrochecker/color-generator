@@ -12,11 +12,21 @@ class Color {
         return new Color(r, g, b);
     }
 
-    similar = range => {
-        let r = this.r + Math.floor(Math.random() * range * 2) - range;
-        let g = this.g + Math.floor(Math.random() * range * 2) - range;
-        let b = this.b + Math.floor(Math.random() * range * 2) - range;
-        return new Color(r,g,b);
+    similar = (range = 50) => {
+        let r,g,b;
+
+        r = this.r + Math.floor(Math.random() * range * 2) - range;
+        g = this.g + Math.floor(Math.random() * range * 2) - range;
+        b = this.b + Math.floor(Math.random() * range * 2) - range;
+
+        if(r > 255) {r = 255}
+        if(r < 0) {r = 0}
+        if(g > 255) {g = 255}
+        if(g < 0) {g = 0}
+        if(b > 255) {b = 255}
+        if(b < 0) {b = 0}
+        
+        return new Color(r, g, b);
     }
 
     out = () => [this.r, this.g, this.b];
