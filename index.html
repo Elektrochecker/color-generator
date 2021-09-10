@@ -2,18 +2,24 @@
 <title>color generator</title>
 <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"> -->
 
-<head></head>
-
-<body style="background-color:rgb(66, 66, 66);">
+<head>
+	<link href="style.css" rel="stylesheet" type="text/css">
 	<script defer src="dom.js"></script>
 	<script defer src="color.js"></script>
 	<script defer src="index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
 	<!-- <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script> -->
-	<div>
+</head>
+
+<body style="background-color:rgb(66, 66, 66);">
+	<div id="buttons">
 		<button id="new combination">new combination</button>
 		<button id="add color">+ color</button>
 		<button id="subtract color">- color</button>
+	</div>
+	<div id="canvas"></div>
+	<div id="colorOutput">
+		<p id="hexColor">#000000</p>
 	</div>
 </body>
 
