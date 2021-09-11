@@ -3,6 +3,7 @@ let width = 400;
 let height = 400;
 
 function setup() {
+  width = windowWidth -16
   let canvas = createCanvas(width, height);
   canvas.parent("canvas")
   colors[0] = new Color;
