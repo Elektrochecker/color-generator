@@ -10,6 +10,7 @@ function setup() {
 
 function draw() {
   background(200);
+  noStroke();
 
   for (let i = 0; i < colors.length; i++) {
     let scl = width / colors.length;
@@ -24,17 +25,17 @@ let hoverUpdateOutput = () => {
   let scl = width / colors.length;
   let x = Math.floor(mouseX / scl);
 
-  if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) {
+  if (mouseX < 0 || mouseX >= width || mouseY < 0 || mouseY > height) {
     return false;
   } else {
 
     let c = colors[x]
-    document.getElementById("hexColor").innerHTML = convertColorToHex(c);
+    document.getElementById("hexColor").innerHTML = convertColorToHexString(c);
     return true;
   }
 }
 
-let convertColorToHex = c => {
+let convertColorToHexString = c => {
   let r = decToHex(c.r);
   let g = decToHex(c.g);
   let b = decToHex(c.b);
