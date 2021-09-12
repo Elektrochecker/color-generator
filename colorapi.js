@@ -1,5 +1,5 @@
-async function getColorName(color) {
-    return await fetch("http://www.thecolorapi.com/id?hex=" + convertColorToHexString(color), {
+async function getColorNameFromApi(color) {
+    return await fetch("https://www.thecolorapi.com/id?hex=" + convertColorToHexString(color), {
             method: "GET"
         })
         .then(response => {
