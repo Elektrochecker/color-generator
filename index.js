@@ -32,7 +32,7 @@ let hoverUpdateOutput = () => {
     let c = colors[x]
 
     if(typeof(c.name) != "string") {
-      getColorName(c)
+      getColorNameFromApi(c)
     }
 
     document.getElementById("hexColor").innerHTML = "#" + convertColorToHexString(c);
