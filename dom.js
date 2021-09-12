@@ -1,8 +1,6 @@
 let addColor = (i) => {
     let rng = Math.floor(Math.random() * 5);
-
-    console.log(i)
-
+    
     if (rng === 0) {
         colors[i + 1] = colors[i].similar().contrast()
     } else {

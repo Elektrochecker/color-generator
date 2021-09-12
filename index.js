@@ -29,9 +29,14 @@ let hoverUpdateOutput = () => {
   if (mouseX < 0 || mouseX >= width || mouseY < 0 || mouseY > height) {
     return false;
   } else {
-
     let c = colors[x]
-    document.getElementById("hexColor").innerHTML = convertColorToHexString(c);
+
+    if(typeof(c.name) != "string") {
+      getColorName(c)
+    }
+
+    document.getElementById("hexColor").innerHTML = "#" + convertColorToHexString(c);
+    document.getElementById("colorName").innerHTML = `${c.name}`;
     return true;
   }
 }
@@ -40,7 +45,7 @@ let convertColorToHexString = c => {
   let r = decToHex(c.r);
   let g = decToHex(c.g);
   let b = decToHex(c.b);
-  return `#${r}${g}${b}`;
+  return `${r}${g}${b}`;
 }
 
 let decToHex = x => x.toString(16).toUpperCase();
