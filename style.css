@@ -11,11 +11,8 @@ body {
     font-weight: bold;
 }
 
-#buttons {
-    font-weight: bold;
-}
-
 .controlButton {
     transform: scale(1.6);
     margin: 16px;
+    font-weight: bold;
 }

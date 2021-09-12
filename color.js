@@ -3,6 +3,8 @@ class Color {
         this.r = r || Math.floor(Math.random() * 255);
         this.g = g || Math.floor(Math.random() * 255);
         this.b = b || Math.floor(Math.random() * 255);
+
+        getColorNameFromApi(this)
     }
 
     contrast = () => {

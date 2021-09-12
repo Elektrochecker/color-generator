@@ -3,10 +3,11 @@ let width = 400;
 let height = 400;
 
 function setup() {
-  width = windowWidth -16
+  width = windowWidth - 16
   let canvas = createCanvas(width, height);
   canvas.parent("canvas")
   colors[0] = new Color;
+  getColorNameFromApi(colors[0])
 }
 
 function draw() {
@@ -31,10 +32,6 @@ let hoverUpdateOutput = () => {
   } else {
     let c = colors[x]
 
-    if(typeof(c.name) != "string") {
-      getColorNameFromApi(c)
-    }
-
     document.getElementById("hexColor").innerHTML = "#" + convertColorToHexString(c);
     document.getElementById("colorName").innerHTML = `${c.name}`;
     return true;
@@ -48,4 +45,10 @@ let convertColorToHexString = c => {
   return `${r}${g}${b}`;
 }
 
-let decToHex = x => x.toString(16).toUpperCase();
+let decToHex = x => {
+  let hex = x.toString(16).toUpperCase();
+  if(hex.length == 1) {
+    hex = "0" + hex;
+  }
+  return hex;
+}
