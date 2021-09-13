@@ -26,3 +26,9 @@ document.getElementById("subtract color").onclick = () => {
         return false;
     }
 }
+
+document.getElementById("fetch names").onclick = () => {
+    colors.forEach(e => {
+        getColorNameFromApi(e);
+    })
+}
